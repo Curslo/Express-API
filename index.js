@@ -10,12 +10,14 @@ const PORT = 5000;
 
 app.use(bodyparser.json());
 
+app.set('view engine', 'ejs')
+
 app.use('/users', userRouter )
 
 app.use('/posts', postRouter)
 
 app.get('/', (req, res) => {
-   res.render('dashboard')
+   res.render('dashboard', {user: {name:"Peter", age: "40"}})
 });
 
 app.listen(PORT, () => 
