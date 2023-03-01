@@ -1,14 +1,14 @@
 import express from 'express';
 import bodyparser from 'body-parser';
 
-import usersRoutes from '/routes/user.js'
+import userRouter from './Routes/users.js';
 
 const app = express();
 const PORT = 5000;
 
 app.use(bodyparser.json());
 
-app.use('/user', usersRoutes)
+app.use('/users', userRouter )
 
 app.get('/', (req, res) => res.send("Hello from HomePage."));
 
