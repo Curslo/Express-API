@@ -1,5 +1,7 @@
+import User from '../Modules/user.module'
+
 export const create = (user) => {
-    console.log('User')
+    
     return user;
 }
 

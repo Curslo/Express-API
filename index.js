@@ -5,6 +5,14 @@ import userRouter from './Routes/users.js';
 
 import postRouter from './Routes/posts.js'
 
+import mongoose from 'mongoose';
+
+mongoose.connect('mongodb+srv://richardkisivii:-U2PR5nfaS.XRMY@cluster0.ank6thj.mongodb.net/?retryWrites=true&w=majority')
+.then(() => {
+    console.log('Connected to database')
+}).catch((err) => {
+    console.log(err)
+})
 const app = express();
 const PORT = 5000;
 
