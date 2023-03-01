@@ -14,7 +14,9 @@ app.use('/users', userRouter )
 
 app.use('/posts', postRouter)
 
-app.get('/', (req, res) => res.send("Hello from HomePage."));
+app.get('/', (req, res) => {
+   res.render('dashboard')
+});
 
 app.listen(PORT, () => 
 console.log(`Server Running on port: http://localhost:${PORT}`));
