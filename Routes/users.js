@@ -20,4 +20,8 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     return res.send("Ready to delete a user by id")
 })
+
+router.get('/createUser', (req, res) => {
+    return res.send("Render signUp")
+})
 export default router;
