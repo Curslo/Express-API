@@ -1,14 +1,17 @@
-import User from '../Modules/user.module'
+import User from '../Modules/user.module.js'
 
 export const create = (user) => {
-    
-    return user;
+    const newUser = User(user)
+    newUser.save()
+    return newUser;
 }
 
 export const update = (userId) => {
     console.log('User')
     return user;
 }
+
+
 
 export const remove = (userId) => {
     console.log('User has been deleted')

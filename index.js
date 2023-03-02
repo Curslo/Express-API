@@ -14,11 +14,17 @@ mongoose.connect('mongodb+srv://richardkisivii:-U2PR5nfaS.XRMY@cluster0.ank6thj.
     console.log(err)
 })
 const app = express();
-const PORT = 5000;
+const PORT = 5010;
 
 app.use(bodyparser.json());
 
+app.use(bodyparser.urlencoded({ extended: true }))
+
 app.set('view engine', 'ejs')
+
+app.get('/signUp', (req, res) => {return res.render('Users/signUp')})
+
+app.get('/login', (req, res) => {return res.render('logIn')})
 
 app.use('/users', userRouter )
 

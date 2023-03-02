@@ -1,12 +1,13 @@
-<%- include('layout.ejs'); %>
-<form>
-    <label>Name</label>
-    <input type="text" required>
-    <label>Email</label>
-    <input type="email" required>
-    <label>Password</label>
-    <input type="password" required>
+<%- include('../layout.ejs'); %>
+<form method="post" action="/users">
+    <label for="name">Name</label>
+    <input name="name" type="text" id="name" required>
+    <label for="email">Email</label>
+    <input name="email" type="email" id="email" required>
+    <label for="pass">Password</label>
+    <input name="password" type="password" id="pass" required>
     <button type="submit">Submit</button>
 </form>
 </body>
 </html>
+

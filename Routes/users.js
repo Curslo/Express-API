@@ -1,5 +1,7 @@
 import  express from 'express';
 
+import {create} from '../Controllers/users.js'
+
 const router = express.Router();
 
 router.get('/', (req, res) => {
@@ -10,7 +12,9 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    return res.send("Ready to create a new user")
+    const user = req.body
+    const newUser = create(user)
+    return res.send(newUser)
 })
 
 router.put('/:id', (req, res) => {
@@ -21,7 +25,4 @@ router.delete('/:id', (req, res) => {
     return res.send("Ready to delete a user by id")
 })
 
-router.get('/createUser', (req, res) => {
-    return res.send("Render signUp")
-})
 export default router;
