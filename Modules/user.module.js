@@ -1,3 +1,6 @@
+//This is a user model.
+//Its currently used to define the user schema or how the user table should be on the database (mongodb).
+
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
