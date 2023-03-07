@@ -1,7 +1,10 @@
+//Import express module
 import  express from 'express';
 
+//Import Create module from '../Controllers/users.js' directory
 import {create} from '../Controllers/users.js'
 
+//Assign variable'router' to 'express.Router()'
 const router = express.Router();
 
 router.get('/', (req, res) => {

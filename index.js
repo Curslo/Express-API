@@ -13,6 +13,10 @@ import postRouter from './Routes/posts.js'
 //Import the mongoose module
 import mongoose from 'mongoose';
 
+import path from 'path';
+
+import expressEjsLayouts from 'express-ejs-layouts';
+
 //Connect mongoose to the mongodb account
 //Handle error if connection is succesful or not
 mongoose.connect('mongodb+srv://richardkisivii:-U2PR5nfaS.XRMY@cluster0.ank6thj.mongodb.net/?retryWrites=true&w=majority')
@@ -46,11 +50,21 @@ app.get('/login', (req, res) => {return res.render('logIn')})
 //Tell express to use 'userRoutes' in the './user' directory
 app.use('/users', userRouter )
 
+//Tell express to use 'postRoutes' in the './posts' directory
 app.use('/posts', postRouter)
+
+app.use(express.static("public"))
+
+app.use(expressEjsLayouts)
+
+app.set("layout", "/views/layout.ejs")
+
 
 app.get('/', (req, res) => {
    res.render('dashboard', {user: {name:"Peter", age: "40"}})
 });
 
+//listen for client request through the port specified with the variable 'PORT'
+//Return 'Server Running on port: http://localhost:${PORT}' message on the console
 app.listen(PORT, () => 
 console.log(`Server Running on port: http://localhost:${PORT}`));
